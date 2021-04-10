@@ -328,26 +328,26 @@ std::string SeriaBuffer::getValue<std::string>()
     return getValueSingle<std::string>();
 }
 
-int main(int argc, char const *argv[])
-{
-    SeriaBuffer buffer;
-    for(int i = 0; i < 10000; ++i)
-    {
-        buffer.appendItem(14.3, "zhangheng", 32, 50);
-    }
-    for(int i = 0; i < 10000; ++i)
-    {
-        // auto [v1, v2, v3, v4] = buffer.getValue<double, std::string, int, int>();
-        // TODO: 合并 getValue 和 getValueSingle
-        auto v1 = buffer.getValueSingle<double>();
-        auto v2 = buffer.getValueSingle<std::string>();
-        auto v3 = buffer.getValueSingle<int>();
-        auto v4 = buffer.getValueSingle<int>();
+// int main(int argc, char const *argv[])
+// {
+//     SeriaBuffer buffer;
+//     for(int i = 0; i < 10000; ++i)
+//     {
+//         buffer.appendItem(14.3, "zhangheng", 32, 50);
+//     }
+//     for(int i = 0; i < 10000; ++i)
+//     {
+//         // auto [v1, v2, v3, v4] = buffer.getValue<double, std::string, int, int>();
+//         // TODO: 合并 getValue 和 getValueSingle
+//         auto v1 = buffer.getValueSingle<double>();
+//         auto v2 = buffer.getValueSingle<std::string>();
+//         auto v3 = buffer.getValueSingle<int>();
+//         auto v4 = buffer.getValueSingle<int>();
 
-        std::cout << i << " :"<< v1 << "  " << v2 << " " << v3 << "  " << v4 << std::endl;
-    }
-    std::cin.get();
-    return 0;
-}
+//         std::cout << i << " :"<< v1 << "  " << v2 << " " << v3 << "  " << v4 << std::endl;
+//     }
+//     std::cin.get();
+//     return 0;
+// }
 
 }
